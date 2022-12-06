@@ -36,11 +36,28 @@
     width: 100%;
 }
 
-.button{
-    padding: 5px 20px 5px 20px;
-    border-radius: 10px;
+.button, select{
+    border-radius: 5px;
     border: 1px solid gray;
+}
+
+select{
+    background-color: rgb(236, 236, 236);
+    padding: 3px 40px 3px 0;
+    margin: 0px 10px 0px 2px;
+}
+
+.button{
+    padding: 3px 20px 3px 20px;
     margin-right: 20px;
+    /* transition: 1s; */
+}
+
+.button:active{
+    background-color: rgba(128, 128, 128, 0.528);
+    /* scale: 1.1; */
+    /* border: 1px solid;
+    box-shadow: 2px 2px 2px 2px rgba(42, 37, 37, 0.322); */
 }
 
 /* MAIN */
