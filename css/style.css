@@ -11,13 +11,29 @@
     width: 100%;
     margin: 0 auto;
     height: 70px;
+}
+
+.row{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.container-header h1, .container-footer p{
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 20px;
+}
+
+.logo{
+    margin-right: 10px;
+}
+
+.logo img{
+    width: 100%;
 }
 
 .button{
@@ -51,6 +67,9 @@ main{
     width: calc(100% / 10);
     height: calc(100% / 10);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     border: 1px solid black;
 }
