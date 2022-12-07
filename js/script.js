@@ -1,19 +1,19 @@
-// creo un div con una classe specifica
+// ESERIZIO BASE
 
-function createGrid(number){
+function createElementGrid(number, cellRow){
+
+    // creo un div con una classe specifica
     const element = document.createElement('div');
+    
+    element.style.width = `calc(100% / ${cellRow})`;
+    element.style.height = `calc(100% / ${cellRow})`;
+
     element.classList.add('square');
     element.innerText = number;
     return element;
-    
 }
 
-// creo e definisco il pulsante play
-
-let button = document.getElementById('button');
-button.addEventListener('click', function(){
-
-    // richiamo la funzione
+function createGrid(cellNumber, cellRow){
 
     let grid = document.getElementById('grid');
     
@@ -25,13 +25,13 @@ button.addEventListener('click', function(){
 
     // creo il ciclo for con i numeri
 
-    for(let i=0; i<100; i++){
-        const square = createGrid(i+1);
+    for(let i=0; i<cellNumber; i++){
+        const square = createElementGrid(i+1, cellRow);
         
         // aggiungo la funzione quando schiaccio sulla casella cambia colore
     
         square.addEventListener('click', function(){
-            this.classList.add('clicked');
+            this.classList.toggle('clicked');
             console.log(`Hai selezionato il numero ${this.innerText}`)
         });
     
@@ -39,5 +39,54 @@ button.addEventListener('click', function(){
 
         grid.appendChild(square);
     }
+}
 
+
+// BONUS
+
+let button = document.getElementById('button');
+button.addEventListener('click', function(){
+
+    let difficult = document.getElementById('level').value;
+
+    let cellNumber;
+    let cellRow;
+
+    switch(difficult){
+        case 'Easy':
+            cellNumber = 100;
+            cellRow = 10;
+
+            // richiamo funzione createGrid
+
+            createGrid(cellNumber, cellRow);
+            break;
+        case 'Medium':
+            cellNumber = 81;
+            cellRow = 9; 
+
+            // richiamo funzione createGrid
+
+            createGrid(cellNumber, cellRow);
+            break;
+        case 'Hard':
+            cellNumber = 49;
+            cellRow = 7;
+
+            // richiamo funzione createGrid
+
+            createGrid(cellNumber, cellRow);
+            break;
+        default:
+            cellNumber = 100;
+            cellRow = 10;
+
+            // richiamo funzione createGrid
+
+            createGrid(cellNumber, cellRow);
+            break;
+    }
 });
+
+
+
